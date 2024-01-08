@@ -24,5 +24,6 @@ export class MovieService {
 
   getMovieDetails(id:String):Observable<MovieResult>{
     return this.http.get<MovieResult>(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`)
+    .pipe(delay(3000));
   }
 }
